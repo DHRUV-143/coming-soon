@@ -1,0 +1,198 @@
+/* Reset default margin and padding */
+body, h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Set the box-sizing to border-box for easier layout control */
+html {
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+/* Set the font and background for the whole page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8e2db; /* Light pinkish background color */
+    margin: 0;
+}
+
+/* Container for the whole content */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
+    color: #333; /* Text color */
+}
+
+/* Background image or color */
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("background-image.jpg"); /* Replace with your background image */
+    background-size: cover;
+    background-position: center;
+    opacity: 0.5;
+}
+
+/* Content inside the container */
+.content {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+/* Logo and Heading Styles */
+.logo {
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #e86d5c; /* A warm, attractive color for the heading */
+}
+
+p {
+    font-size: 1.2rem;
+    color: #b7b7b7; /* A slightly muted color for the paragraph text */
+    margin-bottom: 30px;
+}
+
+/* Countdown Timer Styles */
+.countdown {
+    display: flex;
+    font-size: 1.2rem;
+    margin-top: 20px;
+    color: #ff7b54; /* Use a vibrant color for the countdown text */
+}
+
+.countdown div {
+    margin: 0 15px;
+}
+
+/* Social Media Icons Styles */
+.social-icons {
+    margin-top: 20px;
+}
+
+.social-icons img {
+    width: 40px;
+    margin: 0 10px;
+    cursor: pointer;
+    /* Use a subtle hover effect with a tint of the primary color */
+    transition: transform 0.2s ease-in-out, filter 0.2s ease-in-out;
+}
+
+.social-icons img:hover {
+    transform: scale(1.2);
+    /* Add a tint of the primary color on hover */
+    filter: brightness(1.2);
+}
+
+/* Additional Styles for Spinner and Animated Text */
+
+.spinner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid rgba(255, 123, 84, 0.2); /* Use the primary color with reduced opacity */
+    border-top: 4px solid #ff7b54; /* Use the primary color for the top border */
+    border-radius: 50%;
+    animation: spin 2s linear infinite; /* Add rotation animation to create a spinning effect */
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Animated Slogan Text Styles */
+#sloganText {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ff7b54; /* Use the primary color for the changing text */
+    animation: changeText 4s infinite;
+}
+
+@keyframes changeText {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.slogan {
+    font-size: 1.2rem;
+    color: #555;
+    margin-top: 10px;
+    margin-bottom: 30px; /* Add more space below the slogan */
+    text-align: center;
+    /* Add a subtle glowing effect */
+    position: relative;
+    display: inline-block;
+}
+
+.slogan::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: var(--glow-color); /* Use the custom property for the glow color */
+    opacity: 0.8;
+    z-index: -1;
+    animation: glowEffect 2s ease-in-out infinite; /* Adjust the animation duration as needed */
+}
+
+/* Keyframes for the glowEffect */
+@keyframes glowEffect {
+    0%, 100% {
+        opacity: 0.8; /* Adjust the glow opacity */
+        text-shadow: 0 0 10px var(--glow-color), 0 0 20px var(--glow-color), 0 0 30px var(--glow-color); /* Add multiple shadows to create the glow effect */
+    }
+    50% {
+        opacity: 0.5; /* Adjust the glow opacity */
+        text-shadow: none;
+    }
+}
+/* ... (previous CSS styles) ... */
+
+/* CTA Button Styles */
+.cta-btn {
+    display: inline-block;
+    padding: 12px 20px;
+    font-size: 1.2rem;
+    color: #fff;
+    background-image: linear-gradient(135deg, #ff7b54, #ff3b4d); /* Gradient background with primary colors */
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, filter 0.2s ease-in-out;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add a subtle shadow effect */
+}
+
+.cta-btn:hover {
+    transform: scale(1.05); /* Slightly increase the size on hover */
+    filter: brightness(1.1); /* Slightly increase brightness on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a shadow effect on hover */
+}
+
+.cta-btn:active {
+    transform: scale(0.95); /* Slightly decrease the size when clicked */
+    box-shadow: none; /* Remove the shadow when clicked */
+}
+
+/* ... (previous CSS styles) ... */
